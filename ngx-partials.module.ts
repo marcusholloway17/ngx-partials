@@ -5,6 +5,8 @@ import { WithLoadingPipe } from './pipes/with-loading.pipe';
 import { ClrTopLevelAlertComponent } from './components/alerts/clr-top-level-alert/clr-top-level-alert.component';
 import { ClarityModule } from '@clr/angular';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,11 +15,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     RequestPipe,
     WithLoadingPipe,
     ClrTopLevelAlertComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CardsComponent
   ],
   imports: [
     CommonModule,
-    ClarityModule
+    ClarityModule,
+    RouterModule
   ]
 })
 export class NgxPartialsModule { }
