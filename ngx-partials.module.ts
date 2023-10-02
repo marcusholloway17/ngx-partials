@@ -7,6 +7,8 @@ import { ClarityModule } from "@clr/angular";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { CardsComponent } from "./components/cards/cards.component";
 import { RouterModule } from "@angular/router";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
