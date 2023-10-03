@@ -1,0 +1,14 @@
+<ng-container *ngIf="state$ | async as state">
+  <pre>
+    {{ state | json }}
+  </pre>
+  <app-loader-one
+    *ngIf="state?.performingAction && loader == 'loader-one'"
+  ></app-loader-one>
+  <app-loader-two
+    *ngIf="state?.performingAction && loader == 'loader-two'"
+  ></app-loader-two>
+  <app-loader-three
+    *ngIf="state?.performingAction && loader == 'loader-three'"
+  ></app-loader-three>
+</ng-container>
