@@ -9,6 +9,7 @@ import { CardsComponent } from "./components/cards/cards.component";
 import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { UiStateModule } from "./modules/ui-state";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     ClrTopLevelAlertComponent,
     PageNotFoundComponent,
     CardsComponent,
+    UiStateModule,
   ],
 })
 export class NgxPartialsModule {}
