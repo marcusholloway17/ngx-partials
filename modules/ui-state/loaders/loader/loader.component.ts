@@ -1,11 +1,7 @@
 import { Component, Inject, OnDestroy } from "@angular/core";
-import {
-  UIStateConfig,
-  UI_STATE_CONFIG_PROVIDER,
-  UI_STATE_PROVIDER,
-} from "../../types";
-import { AppUIStateProvider } from "src/app/views/partial/ui-state/core";
+import { UIStateConfig, UI_STATE_CONFIG_PROVIDER } from "../../types";
 import { Subject, takeUntil } from "rxjs";
+import { AppUIStateProvider } from "../../services/ui-state.service";
 
 @Component({
   selector: "app-loader",
