@@ -7,6 +7,7 @@ import { ClarityModule } from "@clr/angular";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { CardsComponent } from "./components/cards/cards.component";
 import { RouterModule } from "@angular/router";
+import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RouterModule } from "@angular/router";
     ClrTopLevelAlertComponent,
     PageNotFoundComponent,
     CardsComponent,
+    ProfilePictureComponent,
   ],
   imports: [CommonModule, ClarityModule, RouterModule],
   exports: [
@@ -23,6 +25,7 @@ import { RouterModule } from "@angular/router";
     ClrTopLevelAlertComponent,
     PageNotFoundComponent,
     CardsComponent,
+    ProfilePictureComponent
   ],
 })
 export class NgxPartialsModule {}
