@@ -1,0 +1,19 @@
+<ng-container *ngIf="timelines$ | async as steps">
+  <clr-timeline [clrLayout]="layout">
+    <clr-timeline-step
+      *ngFor="let step of steps"
+      [ngClass]="step?.class"
+      [clrState]="step.state"
+    >
+      <clr-timeline-step-header *ngIf="step?.header"
+        >{{ step?.header }}m</clr-timeline-step-header
+      >
+      <clr-timeline-step-title *ngIf="step?.title">{{
+        step?.title
+      }}</clr-timeline-step-title>
+      <clr-timeline-step-description *ngIf="step?.description">
+        {{ step?.description }}
+      </clr-timeline-step-description>
+    </clr-timeline-step>
+  </clr-timeline>
+</ng-container>
