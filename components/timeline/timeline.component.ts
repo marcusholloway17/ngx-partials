@@ -63,6 +63,10 @@ export class TimelineComponent implements OnDestroy {
     this.timelineService.processing(step);
   }
 
+  stopProcess(step?: TimelineStep) {
+    this.timelineService.stopProcess(step);
+  }
+
   error(step?: TimelineStep) {
     this.timelineService.error(step);
   }

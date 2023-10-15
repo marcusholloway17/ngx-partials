@@ -109,29 +109,63 @@ export class TimelineService {
   }
 
   processing(step?: TimelineStep) {
+    const currentState = this.getCurrentState();
     const currentStep = this.getCurrentStep();
     if (step) {
+      step.state = ClrTimelineStepState.PROCESSING;
       this.init(
-        this.getCurrentState().map((step) => {
-          if (step == currentStep) {
-            step.state = ClrTimelineStepState.PROCESSING;
+        this.getCurrentState().map((_step) => {
+          if (currentState.indexOf(_step) == currentState.indexOf(step)) {
+            _step = step;
           }
-          return step;
+          return _step;
         })
       );
       return step;
     } else {
-      const toProcess = this.getCurrentStep();
+      if (currentStep) {
+        this.init(
+          this.getCurrentState().map((step) => {
+            if (
+              currentState.indexOf(currentStep) == currentState.indexOf(step)
+            ) {
+              step.state = ClrTimelineStepState.PROCESSING;
+            }
+            return step;
+          })
+        );
+      }
+
+      return step ?? currentStep;
+    }
+  }
+
+  stopProcess(step?: TimelineStep) {
+    const currentStep = this.getCurrentStep();
+    const currentState = this.getCurrentState();
+    if (step) {
+      step.state = ClrTimelineStepState.CURRENT;
       this.init(
-        this.getCurrentState().map((step) => {
-          if (step.state == ClrTimelineStepState.CURRENT) {
-            step.state = ClrTimelineStepState.PROCESSING;
+        currentState?.map((_step) => {
+          if (currentState.indexOf(_step) == currentState.indexOf(step)) {
+            _step = step;
           }
-          return step;
+          return _step;
         })
       );
-      return toProcess;
+    } else {
+      if (currentStep) {
+        this.init(
+          this.getCurrentState()?.map((step) => {
+            if (step == currentStep) {
+              step.state = ClrTimelineStepState.CURRENT;
+            }
+            return step;
+          })
+        );
+      }
     }
+    return step ?? currentStep;
   }
 
   error(step?: TimelineStep) {
