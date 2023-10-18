@@ -9,6 +9,7 @@ import { AppUIStateProvider } from "./services/ui-state.service";
 import { LoaderFourComponent } from "./loaders/loader-four/loader-four.component";
 import { LoaderFiveComponent } from "./loaders/loader-five/loader-five.component";
 import { LoaderSixComponent } from "./loaders/loader-six/loader-six.component";
+import { LoaderSevenComponent } from './loaders/loader-seven/loader-seven.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoaderSixComponent } from "./loaders/loader-six/loader-six.component";
     LoaderFourComponent,
     LoaderFiveComponent,
     LoaderSixComponent,
+    LoaderSevenComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -29,6 +31,7 @@ import { LoaderSixComponent } from "./loaders/loader-six/loader-six.component";
     LoaderFourComponent,
     LoaderFiveComponent,
     LoaderSixComponent,
+    LoaderSevenComponent,
   ],
 })
 export class UiStateModule {
