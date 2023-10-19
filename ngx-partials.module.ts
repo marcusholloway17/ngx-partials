@@ -7,8 +7,9 @@ import { ClarityModule } from "@clr/angular";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { CardsComponent } from "./components/cards/cards.component";
 import { RouterModule } from "@angular/router";
-import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
-import { TimelineComponent } from './components/timeline/timeline.component';
+import { ProfilePictureComponent } from "./components/profile-picture/profile-picture.component";
+import { TimelineComponent } from "./components/timeline/timeline.component";
+import { SafePipe } from "./pipes/safe.pipe";
 
 @NgModule({
   declarations: [
@@ -19,16 +20,18 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     CardsComponent,
     ProfilePictureComponent,
     TimelineComponent,
+    SafePipe,
   ],
   imports: [CommonModule, ClarityModule, RouterModule],
   exports: [
     RequestPipe,
     WithLoadingPipe,
+    SafePipe,
     ClrTopLevelAlertComponent,
     PageNotFoundComponent,
     CardsComponent,
     ProfilePictureComponent,
-    TimelineComponent
+    TimelineComponent,
   ],
 })
 export class NgxPartialsModule {}
