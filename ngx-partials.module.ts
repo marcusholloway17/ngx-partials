@@ -10,6 +10,7 @@ import { RouterModule } from "@angular/router";
 import { ProfilePictureComponent } from "./components/profile-picture/profile-picture.component";
 import { TimelineComponent } from "./components/timeline/timeline.component";
 import { SafePipe } from "./pipes/safe.pipe";
+import { GoBackBtnComponent } from "./components/go-back-btn/go-back-btn.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SafePipe } from "./pipes/safe.pipe";
     ProfilePictureComponent,
     TimelineComponent,
     SafePipe,
+    GoBackBtnComponent,
   ],
   imports: [CommonModule, ClarityModule, RouterModule],
   exports: [
@@ -32,6 +34,7 @@ import { SafePipe } from "./pipes/safe.pipe";
     CardsComponent,
     ProfilePictureComponent,
     TimelineComponent,
+    GoBackBtnComponent,
   ],
 })
 export class NgxPartialsModule {}
