@@ -1,0 +1,15 @@
+<div [class]="btnContainerClass" *ngIf="!template">
+  <button [class]="btnClass">
+    <ng-content select="[icon]" *ngIf="!iconShape"></ng-content>
+    <clr-icon
+      *ngIf="iconShape"
+      [shape]="iconShape"
+      [direction]="iconDirection"
+    ></clr-icon>
+    <ng-content select="[btnContent]" *ngIf="!btnLabel"></ng-content>
+    <span *ngIf="btnLabel">{{ btnLabel }}</span>
+  </button>
+</div>
+<div *ngIf="template">
+  <ng-container *ngTemplateOutlet="template"> </ng-container>
+</div>
