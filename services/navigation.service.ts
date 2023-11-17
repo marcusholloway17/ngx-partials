@@ -4,10 +4,10 @@ import { NavigationEnd, Router } from "@angular/router";
 import { distinctUntilChanged } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class NavigationService {
-  private history: string[] = [];
+  public readonly history: string[] = [];
 
   constructor(private router: Router, private location: Location) {
     this.router.events.pipe(distinctUntilChanged()).subscribe((event) => {
